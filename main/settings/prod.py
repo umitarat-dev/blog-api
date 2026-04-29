@@ -25,7 +25,8 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Güvenlik (HTTPS/CSRF)
 CSRF_TRUSTED_ORIGINS = [
     "https://blog-api-product.up.railway.app",
-    "https://*.up.railway.app" # Tüm railway alt alan adlarına izin ver
+    "https://*.up.railway.app",  # Railway'in tüm alt alan adlarına güven
+    "https://*.railway.app",
 ]
 
 # 1. Django'ya Railway proxy'sine güvenmesini söyleyin
@@ -38,8 +39,13 @@ if not DEBUG:
     SECURE_SSL_REDIRECT = True
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    # Çerezlerin 'Lax' olması admin paneli için en uyumlusudur
+    SESSION_COOKIE_SAMESITE = 'Lax'
+    CSRF_COOKIE_SAMESITE = 'Lax'
 
 CORS_ALLOWED_ORIGINS = [
-    "https://blog-api-product.up.railway.app",
+    "blog-api-product.up.railway.app",
+    ".up.railway.app",  # Tüm Railway subdomainleri
+    "localhost",
+    "127.0.0.1",
 ]
