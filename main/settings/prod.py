@@ -2,9 +2,10 @@
 import dj_database_url
 from .base import *
 
-DEBUG = False
+DEBUG = config("DEBUG", default=False, cast=bool)
 
-ALLOWED_HOSTS = config("ALLOWED_HOSTS", default="*").split(",")
+# "*" yerine kendi adresinizi yazmak CSRF güvenliği için daha sağlıklıdır
+ALLOWED_HOSTS = ["blog-api-product.up.railway.app", "localhost", "127.0.0.1"]
 
 # Neon/Railway PostgreSQL ayarı
 DATABASES = {
@@ -20,20 +21,23 @@ DATABASES = {
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# Güvenlik (HTTPS/CSRF)
-CSRF_TRUSTED_ORIGINS = [f"https://{host}" for host in ALLOWED_HOSTS]
 
+# Güvenlik (HTTPS/CSRF)
+CSRF_TRUSTED_ORIGINS = [
+    "https://blog-api-product.up.railway.app"
+]
 
 # 1. Django'ya Railway proxy'sine güvenmesini söyleyin
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT = True # HTTP'yi otomatik HTTPS'ye yönlendirir
+USE_X_FORWARDED_HOST = True
+USE_X_FORWARDED_PORT = True
 
-# 2. CSRF Güvenilir Kaynaklar (Statik yazmak daha garantidir)
-# ALLOWED_HOSTS "*" olduğunda list comprehension bazen sorun çıkarabilir.
-CSRF_TRUSTED_ORIGINS = [
-    "https://blog-api-product.up.railway.app",
-    "http://blog-api-product.up.railway.app"
-]
+# 2. HTTPS Zorunluluğu
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 CORS_ALLOWED_ORIGINS = [
     "https://blog-api-product.up.railway.app",

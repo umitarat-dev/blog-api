@@ -22,11 +22,13 @@ from drf_yasg import openapi
 from rest_framework import permissions
 
 from drf_yasg.generators import OpenAPISchemaGenerator
+from django.conf import settings
 
 class JWTSchemaGenerator(OpenAPISchemaGenerator):
     def get_schema(self, request=None, public=False):
         schema = super().get_schema(request, public)
         # Swagger'a 'Authorization' header'ı bekleyen bir kutu ekle diyoruz
+        schema.schemes = ["http", "https"] if settings.DEBUG else ["https"]
         schema.security_definitions = {
             'Token': {
                 'type': 'apiKey',
