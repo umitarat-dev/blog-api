@@ -24,7 +24,8 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Güvenlik (HTTPS/CSRF)
 CSRF_TRUSTED_ORIGINS = [
-    "https://blog-api-product.up.railway.app"
+    "https://blog-api-product.up.railway.app",
+    "https://*.up.railway.app" # Tüm railway alt alan adlarına izin ver
 ]
 
 # 1. Django'ya Railway proxy'sine güvenmesini söyleyin
