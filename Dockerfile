@@ -1,5 +1,5 @@
 # Hafif ve güncel bir Python imajı seçiyoruz
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 # Python'un logları anlık basmasını ve bytecode üretmemesini sağlarız
 ENV PYTHONDONTWRITEBYTECODE=1

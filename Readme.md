@@ -67,7 +67,7 @@ The API is fully documented and interactive. You can test all endpoints (Auth, B
 1. **Clone the repository:**
 ```bash
 git clone [https://github.com/umitarat-dev/blog-api.git](https://github.com/umitarat-dev/blog-api.git)
-cd blog-app-api
+cd blog-api
 ```
 
 

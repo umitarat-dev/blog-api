@@ -21,6 +21,23 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework import permissions
 
+from drf_yasg.generators import OpenAPISchemaGenerator
+
+class JWTSchemaGenerator(OpenAPISchemaGenerator):
+    def get_schema(self, request=None, public=False):
+        schema = super().get_schema(request, public)
+        # Swagger'a 'Authorization' header'ı bekleyen bir kutu ekle diyoruz
+        schema.security_definitions = {
+            'Token': {
+                'type': 'apiKey',
+                'name': 'Authorization',
+                'in': 'header'
+            }
+        }
+        schema.security = [{"Token": []}]
+        return schema
+
+
 # Swagger dokümantasyon ayarları
 schema_view = get_schema_view(
    openapi.Info(
@@ -32,8 +49,10 @@ schema_view = get_schema_view(
    ),
    public=True,
    permission_classes=[permissions.AllowAny],
+   generator_class=JWTSchemaGenerator,
 )
-
+    
+    
 urlpatterns = [
     # Ana sayfa direkt Swagger'a gitsin
     path('', RedirectView.as_view(url='swagger/', permanent=True)),
