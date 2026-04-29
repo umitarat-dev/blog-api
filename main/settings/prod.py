@@ -44,8 +44,9 @@ if not DEBUG:
     CSRF_COOKIE_SAMESITE = 'Lax'
 
 CORS_ALLOWED_ORIGINS = [
-    "blog-api-product.up.railway.app",
-    ".up.railway.app",  # Tüm Railway subdomainleri
-    "localhost",
-    "127.0.0.1",
+    "https://blog-api-product.up.railway.app",
+    "https://*.up.railway.app",  # Tüm Railway subdomainleri
+    "https://*.railway.app",
+    "http://localhost",
+    "http://127.0.0.1",
 ]
