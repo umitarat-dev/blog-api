@@ -14,7 +14,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://blog-api-production.up.railway.app/swagger/">
+    <a href="https://blog-api-product.up.railway.app/swagger/">
       🖥️ Live Demo
     </a>
      | 
@@ -25,7 +25,7 @@
 </div>
 
 <p align="center">
-  <a href="https://blog-api-production.up.railway.app/swagger/">
+  <a href="https://blog-api-product.up.railway.app/swagger/">
     <img src="./assets/swagger.gif" alt="Interactive Swagger Documentation" width="700"/>
   </a>
 </p>
