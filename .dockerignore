@@ -1,0 +1,35 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Environment & Secrets
+.env
+
+# Database
+db.sqlite3
+
+# Static & Media (Docker içinde yeniden oluşturulacağı için)
+staticfiles/
+media/
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# IDE & System
+.vscode/
+.idea/
+.DS_Store
