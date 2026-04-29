@@ -17,31 +17,12 @@ DATABASES = {
     )
 }
 
-# Statik Dosya Sunumu (WhiteNoise)
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-
 # Güvenlik (HTTPS/CSRF)
 CSRF_TRUSTED_ORIGINS = [
     "https://blog-api-product.up.railway.app",
     "https://*.up.railway.app",  # Railway'in tüm alt alan adlarına güven
     "https://*.railway.app",
 ]
-
-# 1. Django'ya Railway proxy'sine güvenmesini söyleyin
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-USE_X_FORWARDED_HOST = True
-USE_X_FORWARDED_PORT = True
-
-# 2. HTTPS Zorunluluğu
-if not DEBUG:
-    SECURE_SSL_REDIRECT = True
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
-    # Çerezlerin 'Lax' olması admin paneli için en uyumlusudur
-    SESSION_COOKIE_SAMESITE = 'Lax'
-    CSRF_COOKIE_SAMESITE = 'Lax'
 
 CORS_ALLOWED_ORIGINS = [
     "https://blog-api-product.up.railway.app",
@@ -50,3 +31,21 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost",
     "http://127.0.0.1",
 ]
+
+#  Django'ya Railway proxy'sine güvenmesini söyleyin
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+USE_X_FORWARDED_HOST = True
+USE_X_FORWARDED_PORT = True
+
+#  HTTPS Zorunluluğu
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    # Çerezlerin 'Lax' olması admin paneli için en uyumlusudur
+    SESSION_COOKIE_SAMESITE = 'Lax'
+    CSRF_COOKIE_SAMESITE = 'Lax'
+
+# Statik Dosya Sunumu (WhiteNoise)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
