@@ -5,7 +5,11 @@ from .base import *
 DEBUG = True 
 
 # Kendi kullanıcı adınla değiştir:
-ALLOWED_HOSTS = ['umitarat.pythonanywhere.com'] 
+ALLOWED_HOSTS = [
+    'umit8114.pythonanywhere.com',
+    'localhost',
+    '127.0.0.1'
+] 
 
 DATABASES = {
     'default': {
