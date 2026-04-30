@@ -2,7 +2,7 @@
 from .base import *
 
 # Demo aşamasında hataları görmek için True kalabilir, sonra False yaparsın
-DEBUG = True 
+DEBUG = config('DEBUG', default=True, cast=bool)
 
 # Kendi kullanıcı adınla değiştir:
 ALLOWED_HOSTS = [
