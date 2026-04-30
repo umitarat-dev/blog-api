@@ -24,7 +24,7 @@
 
 <p align="center">
   <a href="https://umit8114.pythonanywhere.com/">
-    <img src="./assets/swagger.gif" alt="Interactive Swagger Documentation" width="700"/>
+    <img src="./assets/blog-api.gif" alt="Interactive Swagger Documentation" width="700"/>
   </a>
 </p>
 
