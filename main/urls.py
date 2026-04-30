@@ -28,7 +28,11 @@ class JWTSchemaGenerator(OpenAPISchemaGenerator):
     def get_schema(self, request=None, public=False):
         schema = super().get_schema(request, public)
         # Swagger'a 'Authorization' header'ı bekleyen bir kutu ekle diyoruz
-        schema.schemes = ["http", "https"] if settings.DEBUG else ["https"]
+        # schema.schemes = ["http", "https"] if settings.DEBUG else ["https"]
+        if settings.DEBUG:
+            schema.schemes = ["https", "http"]
+        else:
+            schema.schemes = ["https"]
         schema.security_definitions = {
             'Token': {
                 'type': 'apiKey',

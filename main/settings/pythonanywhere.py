@@ -22,6 +22,11 @@ DATABASES = {
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = '/static/'
 
+# Django 4.0+ için POST/PUT/DELETE isteklerinde zorunludur
+CSRF_TRUSTED_ORIGINS = [
+    'https://umit8114.pythonanywhere.com'
+]
+
 # Güvenlik ayarları (SQLite ile çakışmaması için basit tutuyoruz)
 SECURE_SSL_REDIRECT = False
 SESSION_COOKIE_SECURE = False
