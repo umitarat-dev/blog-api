@@ -1,0 +1,24 @@
+# main/settings/pa.py
+from .base import *
+
+# Demo aşamasında hataları görmek için True kalabilir, sonra False yaparsın
+DEBUG = True 
+
+# Kendi kullanıcı adınla değiştir:
+ALLOWED_HOSTS = ['umitarat.pythonanywhere.com'] 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+# Statik dosyalar için PA'nın beklediği klasör
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_URL = '/static/'
+
+# Güvenlik ayarları (SQLite ile çakışmaması için basit tutuyoruz)
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
