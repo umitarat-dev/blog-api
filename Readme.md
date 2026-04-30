@@ -5,9 +5,9 @@
   <img src="[https://img.shields.io/badge/Hosting-PythonAnywhere-1F90FF?style=flat&logo=pythonanywhere&logoColor=white](https://img.shields.io/badge/Hosting-PythonAnywhere-1F90FF?style=flat&logo=pythonanywhere&logoColor=white)" />
 </p>
 
-<h1 align="center">Blog API</h1>
+<h1 align="center">📝 Blog API</h1>
 
-<p align="center"><strong>🚀 A robust, production-ready REST API for modern blogging platforms 🚀</strong></p>
+<p align="center"><strong>A robust, production-ready REST API for modern blogging platforms 🚀</strong></p>
 
 
 <div align="center">
