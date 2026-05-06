@@ -4,6 +4,14 @@
   <img src="[https://img.shields.io/badge/Database-SQLite-003B57?style=flat&logo=sqlite&logoColor=white](https://img.shields.io/badge/Database-SQLite-003B57?style=flat&logo=sqlite&logoColor=white)" />
   <img src="[https://img.shields.io/badge/API%20Docs-Swagger-85EA2D?style=flat&logo=swagger&logoColor=black](https://img.shields.io/badge/API%20Docs-Swagger-85EA2D?style=flat&logo=swagger&logoColor=black)" />
   <img src="[https://img.shields.io/badge/Hosting-PythonAnywhere-1F90FF?style=flat&logo=pythonanywhere&logoColor=white](https://img.shields.io/badge/Hosting-PythonAnywhere-1F90FF?style=flat&logo=pythonanywhere&logoColor=white)" />
+  <p align="center">
+  <img src="https://img.shields.io/badge/Backend-Django%205.2-092E20?style=flat&logo=django&logoColor=white" />
+  <img src="https://img.shields.io/badge/Database-PostgreSQL-003B57?style=flat&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/API%20Docs-Swagger-85EA2D?style=flat&logo=swagger&logoColor=black" />
+  <img src="https://img.shields.io/badge/Container-Docker-2496ED?style=flat&logo=docker&logoColor=white" />
+</p>
+
+<h1 align="center">📝 Personnel Management API</h1>
 </p>
 
 <h1 align="center">📝 Blog API</h1>
